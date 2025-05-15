@@ -141,7 +141,7 @@
 		& button {
 			width: 100%;
 			padding: 1rem;
-			background: #333;
+			background: var(--link);
 			color: white;
 			border: none;
 			border-radius: 5px;
@@ -152,7 +152,7 @@
 			transition: background 0.2s;
 
 			&:hover {
-				background: #444;
+				opacity: 0.9;
 			}
 
 			&:disabled {

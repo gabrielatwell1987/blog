@@ -38,14 +38,14 @@
 
 			& a {
 				text-decoration: none;
-				color: #333;
+				/* color: #333; */
 				font-family: var(--sharetech-font);
 				font-size: clamp(1rem, 2vw, 1.5rem);
 				font-weight: 900;
 
-				&:hover {
+				/* &:hover {
 					color: #666;
-				}
+				} */
 			}
 		}
 	}
