@@ -1,4 +1,7 @@
 <script>
+	import { addPost } from '$lib/data/stores.svelte.js';
+	import { goto } from '$app/navigation';
+
 	let post = $state({
 		title: '',
 		content: '',
@@ -8,14 +11,27 @@
 	let isSubmitting = $state(false);
 	let error = $state(null);
 
-	function handleSubmit(event) {
+	function resetForm() {
+		post = {
+			title: '',
+			content: '',
+			tags: '',
+			author: ''
+		};
+	}
+
+	async function handleSubmit(event) {
 		event.preventDefault();
+		if (!post.title || !post.content || !post.author) {
+			error = 'Please fill in all required fields';
+			return;
+		}
+
 		isSubmitting = true;
 		error = null;
 
 		try {
-			// TODO: Add API call to save post
-			const tagsArray = post.tags.split(',').map((tag) => tag.trim());
+			const tagsArray = post.tags ? post.tags.split(',').map((tag) => tag.trim()) : [];
 			const newPost = {
 				...post,
 				date: new Date().toISOString(),
@@ -23,8 +39,9 @@
 				slug: post.title.toLowerCase().replace(/\s+/g, '-')
 			};
 
-			// After successful save, redirect to the new post
-			window.location.href = `/posts/${newPost.slug}`;
+			addPost(newPost);
+			resetForm();
+			await goto('/posts');
 		} catch (err) {
 			error = err.message;
 		} finally {
@@ -137,6 +154,20 @@
 			&:hover {
 				background: #444;
 			}
+
+			&:disabled {
+				opacity: 0.7;
+				cursor: not-allowed;
+			}
+		}
+
+		& .error {
+			color: #cc0000;
+			background: #ffebeb;
+			padding: 0.8rem;
+			border-radius: 5px;
+			margin-bottom: 1rem;
+			font-size: 0.9rem;
 		}
 	}
 </style>

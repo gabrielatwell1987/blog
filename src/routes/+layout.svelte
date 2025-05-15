@@ -2,7 +2,7 @@
 	import '../app.css';
 
 	let navItems = $state([
-		{ href: '/', text: 'Home' },
+		{ href: '/', text: 'Think.Flow  ' },
 		{ href: '/posts', text: 'Blog Posts' },
 		{ href: '/new', text: 'New Post' }
 	]);
@@ -39,9 +39,9 @@
 			& a {
 				text-decoration: none;
 				color: #333;
-				font-family: var(--ancizar-semibold-font);
+				font-family: var(--sharetech-font);
 				font-size: clamp(1rem, 2vw, 1.5rem);
-				font-weight: 600;
+				font-weight: 900;
 
 				&:hover {
 					color: #666;
