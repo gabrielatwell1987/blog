@@ -98,7 +98,8 @@
 <style>
 	.new-post {
 		max-width: 800px;
-		margin: 0 auto;
+		margin-inline: auto;
+		padding: 1rem;
 
 		& h1 {
 			font-family: var(--ancizar-black-font);
@@ -108,7 +109,8 @@
 		}
 
 		& .form-group {
-			margin-bottom: 1.5rem;
+			margin-inline: auto;
+			width: 100%;
 
 			& label {
 				display: block;
@@ -168,6 +170,16 @@
 			border-radius: 5px;
 			margin-bottom: 1rem;
 			font-size: 0.9rem;
+		}
+	}
+
+	@media (max-width: 500px) {
+		.new-post {
+			padding: 1rem;
+
+			& .form-group {
+				padding: 0;
+			}
 		}
 	}
 </style>

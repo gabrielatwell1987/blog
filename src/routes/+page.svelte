@@ -17,7 +17,7 @@
 
 <style>
 	header {
-		padding: 2rem;
+		padding: 1rem;
 		text-align: center;
 
 		& h1 {
@@ -32,6 +32,8 @@
 			color: #666;
 			line-height: 1.6;
 			font-size: clamp(1rem, 3vw, 2rem);
+			max-width: 600px;
+			margin-inline: auto;
 		}
 
 		& .tags {
@@ -39,7 +41,7 @@
 			gap: 1rem;
 			justify-content: center;
 			flex-wrap: wrap;
-			margin-top: -2em;
+			margin-top: 2em;
 
 			& .tag {
 				padding: 0.5rem 1rem;
@@ -47,6 +49,16 @@
 				font-size: clamp(0.8rem, 1vw, 1rem);
 				color: #555;
 			}
+		}
+	}
+
+	@media (max-width: 500px) {
+		/* header {
+            padding: 0.5rem;
+        } */
+
+		header {
+			padding: 0.5rem;
 		}
 	}
 </style>

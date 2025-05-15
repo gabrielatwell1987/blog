@@ -53,6 +53,10 @@
 
 <style>
 	.posts {
+		padding: 1rem;
+		max-width: 1200px;
+		margin-inline: auto;
+
 		& h2 {
 			font-family: var(--ancizar-black-font);
 			font-size: clamp(2rem, 4vw, 3rem);
@@ -62,8 +66,9 @@
 
 		& .posts-grid {
 			display: grid;
-			grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+			grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
 			gap: 2rem;
+			width: 100%;
 
 			& .post-card {
 				padding: 1.5rem;
@@ -174,6 +179,17 @@
 
 			&:hover {
 				text-decoration: underline;
+			}
+		}
+	}
+
+	@media (max-width: 500px) {
+		.posts {
+			padding: 1rem;
+
+			& .posts-grid {
+				grid-template-columns: 1fr;
+				gap: 1.5rem;
 			}
 		}
 	}

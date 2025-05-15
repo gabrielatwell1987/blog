@@ -146,6 +146,8 @@
 
 			& .nav-header {
 				margin-bottom: 1rem;
+				height: 1em;
+				margin-top: 1rem;
 
 				& .menu-btn {
 					display: block;
