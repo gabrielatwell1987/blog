@@ -5,22 +5,31 @@
 		tags: '',
 		author: ''
 	});
+	let isSubmitting = $state(false);
+	let error = $state(null);
 
 	function handleSubmit(event) {
 		event.preventDefault();
+		isSubmitting = true;
+		error = null;
 
-		// Convert comma-separated tags string to array
-		const tagsArray = post.tags.split(',').map((tag) => tag.trim());
+		try {
+			// TODO: Add API call to save post
+			const tagsArray = post.tags.split(',').map((tag) => tag.trim());
+			const newPost = {
+				...post,
+				date: new Date().toISOString(),
+				tags: tagsArray,
+				slug: post.title.toLowerCase().replace(/\s+/g, '-')
+			};
 
-		const newPost = {
-			...post,
-			date: new Date().toISOString(),
-			tags: tagsArray,
-			slug: post.title.toLowerCase().replace(/\s+/g, '-')
-		};
-
-		// TODO: Add logic to save the post
-		console.log('New post:', newPost);
+			// After successful save, redirect to the new post
+			window.location.href = `/posts/${newPost.slug}`;
+		} catch (err) {
+			error = err.message;
+		} finally {
+			isSubmitting = false;
+		}
 	}
 </script>
 
@@ -58,7 +67,15 @@
 		></textarea>
 	</div>
 
-	<button type="submit">Create Post</button>
+	{#if error}
+		<div class="error">
+			{error}
+		</div>
+	{/if}
+
+	<button type="submit" disabled={isSubmitting}>
+		{isSubmitting ? 'Creating...' : 'Create Post'}
+	</button>
 </form>
 
 <style>
@@ -72,52 +89,54 @@
 			margin-bottom: 2rem;
 			text-align: center;
 		}
-	}
 
-	.form-group {
-		margin-bottom: 1.5rem;
+		& .form-group {
+			margin-bottom: 1.5rem;
 
-		& label {
-			display: block;
-			margin-bottom: 0.5rem;
-			color: #333;
-			font-weight: 600;
-		}
+			& label {
+				display: block;
+				margin-bottom: 0.5rem;
+				color: #333;
+				font-weight: 600;
+			}
 
-		& input,
-		& textarea {
-			width: 100%;
-			padding: 0.8rem;
-			border: 1px solid #ddd;
-			border-radius: 5px;
-			font-size: 1rem;
-			font-family: inherit;
+			& input,
+			& textarea {
+				width: 100%;
+				padding: 0.8rem;
+				border: 1px solid #ddd;
+				border-radius: 5px;
+				font-size: 1rem;
+				font-family: inherit;
 
-			&:focus {
-				outline: none;
-				border-color: #666;
+				&:focus {
+					outline: none;
+					border-color: #666;
+				}
+			}
+
+			& textarea {
+				resize: vertical;
+				min-height: 200px;
 			}
 		}
 
-		& textarea {
-			resize: vertical;
-			min-height: 200px;
-		}
-	}
+		& button {
+			width: 100%;
+			padding: 1rem;
+			background: #333;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			font-family: var(--ancizar-semibold-font);
+			font-size: clamp(1rem, 2vw, 1.5rem);
+			letter-spacing: 3px;
+			cursor: pointer;
+			transition: background 0.2s;
 
-	button {
-		width: 100%;
-		padding: 1rem;
-		background: #333;
-		color: white;
-		border: none;
-		border-radius: 5px;
-		font-size: 1rem;
-		cursor: pointer;
-		transition: background 0.2s;
-
-		&:hover {
-			background: #444;
+			&:hover {
+				background: #444;
+			}
 		}
 	}
 </style>
