@@ -2,7 +2,7 @@
 	import '../app.css';
 
 	let navItems = $state([
-		{ href: '/', text: 'Think.Flow  ' },
+		// { href: '/', text: 'Think.Flow  ' },
 		{ href: '/posts', text: 'Blog Posts' },
 		{ href: '/new', text: 'New Post' }
 	]);
@@ -10,6 +10,8 @@
 </script>
 
 <nav>
+	<a href="/"> <img src="/logos/main.svg" alt="" /></a>
+
 	<ul>
 		{#each navItems as item}
 			<li>
@@ -27,25 +29,29 @@
 	nav {
 		padding: 1rem;
 		background-color: #f4f4f4;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+
+		& img {
+			max-width: 250px;
+			width: 100%;
+			height: auto;
+			object-fit: cover;
+		}
 
 		& ul {
 			list-style: none;
 			padding: 0;
 			margin: 0;
 			display: flex;
-			justify-content: space-around;
-			gap: 1rem;
+			gap: 2.5em;
 
 			& a {
 				text-decoration: none;
-				/* color: #333; */
 				font-family: var(--sharetech-font);
 				font-size: clamp(1rem, 2vw, 1.5rem);
 				font-weight: 900;
-
-				/* &:hover {
-					color: #666;
-				} */
 			}
 		}
 	}
