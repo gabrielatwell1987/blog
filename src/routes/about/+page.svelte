@@ -2,7 +2,7 @@
 </script>
 
 <section class="wrapper">
-	<img src="/logos/Think.Flow.svg" alt="" width="400" />
+	<img src="/logos/Think.Flow.svg" alt="Think.Flow logo" width="400" />
 
 	<h1>About Think.Flow</h1>
 

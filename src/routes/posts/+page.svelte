@@ -2,8 +2,6 @@
 	import { getPosts, deletePost } from '$lib/data/stores.svelte.js';
 
 	const posts = getPosts();
-
-	// Handle delete with loading state
 	let isDeleting = $state(false);
 
 	async function handleDelete(slug) {
@@ -14,6 +12,9 @@
 		isDeleting = true;
 		try {
 			deletePost(slug);
+		} catch (error) {
+			console.error('Failed to delete post:', error);
+			alert('Failed to delete post. Please try again.');
 		} finally {
 			isDeleting = false;
 		}
@@ -24,7 +25,7 @@
 	<h2>Latest Posts</h2>
 
 	<div class="posts-grid">
-		{#each posts as post}
+		{#each posts as post (post.slug)}
 			<article class="post-card">
 				<h3>
 					<a href={`/posts/${post.slug}`}>{post.title}</a>
@@ -48,7 +49,7 @@
 		{/each}
 	</div>
 
-	{#if posts.length === 0}
+	{#if !posts?.length}
 		<p class="no-posts">No posts yet. <a href="/new">Create your first post!</a></p>
 	{/if}
 </section>
