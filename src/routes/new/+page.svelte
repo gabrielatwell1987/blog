@@ -1,6 +1,7 @@
 <script>
 	import { addPost } from '$lib/data/stores.svelte.js';
 	import { goto } from '$app/navigation';
+	import SEO from '$lib/data/SEO.svelte';
 
 	let post = $state({
 		title: '',
@@ -49,6 +50,12 @@
 		}
 	}
 </script>
+
+<SEO
+	title="New Think.Flow post"
+	description="Add a new post"
+	keywords="new blog post, new think.flow post"
+/>
 
 <form class="new-post" onsubmit={handleSubmit}>
 	<h1>Create New Post</h1>

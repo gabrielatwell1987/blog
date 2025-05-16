@@ -1,15 +1,16 @@
 <script>
 	import { page } from '$app/stores';
 
-	/** @type {{title: any, description: any, keywords: any}} */
-	let {
-		title = 'Gabriel Atwell',
-		description = 'Web developer and web designer',
-		keywords = ''
-	} = $props();
+	/** @type {{title: string, description: string, keywords: string}} */
+	let { keywords, description, title } = $props();
+	// let {
+	// 	title = 'Think.Flow - Your Digital Journal & Blog Platform',
+	// 	description = 'A clean, intuitive blogging platform for capturing and organizing your thoughts. Create, edit, and manage your posts with complete freedom.',
+	// 	keywords = 'blog platform, digital journal, thought capture, personal blog, content management, writing platform'
+	// } = $props();
 
 	let url = $derived($page.url.href);
-	let siteName = 'Atwell UI';
+	let siteName = 'Think.Flow';
 	let baseUrl = $derived($page.url.origin);
 </script>
 
@@ -27,20 +28,28 @@
 	<meta property="og:url" content={url} />
 	<meta property="og:type" content="website" />
 	<meta property="og:site_name" content={siteName} />
-	<meta property="og:image" content="{baseUrl}/logos/atwellUI.webp" />
+	<meta property="og:image" content="{baseUrl}/logos/Think.Flow.svg" />
 
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={description} />
-	<meta name="twitter:image" content="{baseUrl}/logos/atwellUI.webp" />
+	<meta name="twitter:image" content="{baseUrl}/logos/Think.Flow.svg" />
 
 	<script type="application/ld+json">
-		{JSON.stringify({
-			"@context": "http://schema.org",
-			"@type": "WebSite",
-			"name": "Gabriel Atwell",
-          	"description": "The portfolio of Gabriel Atwell, a web developer and designer based in Las Vegas, NV.",
-			"url": url
-		})}
+        {JSON.stringify({
+            "@context": "http://schema.org",
+            "@type": "WebSite",
+            "name": "Think.Flow",
+            "description": "A modern digital journaling and blogging platform designed for seamless thought capture and content management.",
+            "url": url,
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": {
+                    "@type": "EntryPoint",
+                    "urlTemplate": `${url}/posts?q={search_term_string}`
+                },
+                "query-input": "required name=search_term_string"
+            }
+        })}
 	</script>
 </svelte:head>

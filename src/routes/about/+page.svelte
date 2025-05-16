@@ -1,5 +1,8 @@
 <script>
+	import SEO from '$lib/data/SEO.svelte';
 </script>
+
+<SEO title="About Think.Flow" description="All about us" keywords="about think.flow" />
 
 <section class="wrapper">
 	<img src="/logos/Think.Flow.svg" alt="Think.Flow logo" width="400" />

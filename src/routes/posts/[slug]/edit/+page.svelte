@@ -3,6 +3,7 @@
 	import { getPosts, updatePost } from '$lib/data/stores.svelte.js';
 	import { goto } from '$app/navigation';
 	import { error } from '@sveltejs/kit';
+	import SEO from '$lib/data/SEO.svelte';
 
 	const slug = $page.params.slug;
 	const posts = getPosts();
@@ -46,6 +47,12 @@
 		}
 	}
 </script>
+
+<SEO
+	title="Edit Think.Flow Post"
+	description="Edit you blog post"
+	keywords="edit blog post, think.flow editing"
+/>
 
 <div class="edit-post">
 	<h1>Edit Post</h1>

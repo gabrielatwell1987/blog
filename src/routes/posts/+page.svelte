@@ -1,5 +1,6 @@
 <script>
 	import { getPosts, deletePost } from '$lib/data/stores.svelte.js';
+	import SEO from '$lib/data/SEO.svelte';
 
 	const posts = getPosts();
 	let isDeleting = $state(false);
@@ -20,6 +21,12 @@
 		}
 	}
 </script>
+
+<SEO
+	title="Latest Think.Flow posts"
+	description="Your current posts"
+	keywords="think.flow posts, latest think.flow blog posts"
+/>
 
 <section class="posts">
 	<h2>Latest Posts</h2>
