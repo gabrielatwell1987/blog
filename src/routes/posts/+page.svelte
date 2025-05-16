@@ -69,7 +69,7 @@
 
 		& .posts-grid {
 			display: grid;
-			grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+			grid-template-columns: repeat(auto-fill, minmax(min(275px, 100%), 1fr));
 			gap: 2rem;
 			width: 100%;
 

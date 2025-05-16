@@ -1,5 +1,6 @@
 <script>
 	import '../app.css';
+	import LocalStorage from '$lib/data/LocalStorage.svelte';
 
 	let navItems = $state([
 		{ href: '/about', text: 'About' },
@@ -37,6 +38,8 @@
 		{/each}
 	</ul>
 </nav>
+
+<LocalStorage />
 
 <main>
 	{@render children()}
