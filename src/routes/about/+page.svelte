@@ -58,15 +58,17 @@
 
 			& h2 {
 				font-size: clamp(1.5rem, 1.5vw, 2rem);
-				margin-bottom: 1em;
 			}
 
 			& ul {
 				list-style: none;
 				padding: 0;
 				display: grid;
-				gap: 1em;
-				font-size: clamp(1rem, 1.5vw, 1.2rem);
+				gap: 0.5em;
+
+				& li {
+					font-size: clamp(1rem, 1.75vw, 1.35rem);
+				}
 			}
 		}
 	}
