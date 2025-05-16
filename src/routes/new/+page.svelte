@@ -154,7 +154,8 @@
 			transition: background 0.2s;
 
 			&:hover {
-				opacity: 0.9;
+				/* opacity: 0.9; */
+				background: var(--accent);
 			}
 
 			&:disabled {

@@ -1,5 +1,7 @@
 <script>
-	import { posts, deletePost } from '$lib/data/stores.svelte.js';
+	import { getPosts, deletePost } from '$lib/data/stores.svelte.js';
+
+	const posts = getPosts();
 
 	// Handle delete with loading state
 	let isDeleting = $state(false);

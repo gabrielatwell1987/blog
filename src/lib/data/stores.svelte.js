@@ -1,5 +1,3 @@
-// import { state } from 'svelte';
-
 // Initialize posts state
 const posts = $state([
 	{
@@ -31,4 +29,9 @@ function updatePost(slug, updatedPost) {
 	}
 }
 
-export { posts, addPost, deletePost, updatePost };
+// Getter function for posts
+function getPosts() {
+	return posts;
+}
+
+export { getPosts, addPost, deletePost, updatePost };
