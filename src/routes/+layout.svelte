@@ -2,6 +2,7 @@
 	import '../app.css';
 
 	let navItems = $state([
+		{ href: '/about', text: 'About' },
 		{ href: '/posts', text: 'Blog Posts' },
 		{ href: '/new', text: 'New Post' }
 	]);
