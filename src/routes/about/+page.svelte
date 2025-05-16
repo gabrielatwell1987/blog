@@ -5,7 +5,7 @@
 <SEO title="About Think.Flow" description="All about us" keywords="about think.flow" />
 
 <section class="wrapper">
-	<img src="/logos/Think.Flow.svg" alt="Think.Flow logo" width="400" />
+	<img src="/logos/biglogo.webp" alt="Think.Flow logo" width="400" />
 
 	<h1>About Think.Flow</h1>
 
@@ -38,6 +38,7 @@
 		height: 100vh;
 
 		& img {
+			margin-top: 13em;
 			margin-bottom: -3em;
 		}
 
