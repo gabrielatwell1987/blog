@@ -105,10 +105,12 @@
 <style>
 	.new-post {
 		max-width: 800px;
+		min-height: 100vh;
 		margin-inline: auto;
-		padding: 1rem;
+		padding: 2rem 1rem;
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
 		gap: 1rem;
 
 		& h1 {
@@ -138,7 +140,10 @@
 				border-radius: 5px;
 				font-size: clamp(1rem, 1.75vw, 1.5rem);
 				font-family: inherit;
-				/* margin-bottom: 1rem; */
+
+				@media (width <= 500px) {
+					margin-left: -1em;
+				}
 
 				&:focus {
 					outline: none;
@@ -153,7 +158,9 @@
 		}
 
 		& button {
+			max-width: 200px;
 			width: 100%;
+			margin-inline: auto;
 			padding: 1rem;
 			background: var(--link);
 			color: white;
@@ -165,8 +172,11 @@
 			cursor: pointer;
 			transition: background 0.2s;
 
+			@media (width <= 500px) {
+				width: 100%;
+			}
+
 			&:hover {
-				/* opacity: 0.9; */
 				background: var(--accent);
 			}
 

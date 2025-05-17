@@ -85,8 +85,12 @@
 <style>
 	.edit-post {
 		max-width: 800px;
-		margin: 1rem auto;
-		padding: 0 1rem;
+		min-height: 100vh;
+		margin-inline: auto;
+		padding: 2rem 1rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 
 		& h1 {
 			font-family: var(--ancizar-black-font);
@@ -97,7 +101,10 @@
 		& form {
 			display: flex;
 			flex-direction: column;
-			gap: 1rem;
+			gap: 2rem;
+			width: 100%;
+			max-width: 600px;
+			margin-inline: auto;
 		}
 
 		& .form-group {
@@ -111,12 +118,15 @@
 			& input,
 			& textarea {
 				width: 100%;
-				padding: 0.8rem;
+				padding: 1rem;
 				border: 1px solid #ddd;
 				border-radius: 5px;
 				font-size: clamp(1rem, 1.75vw, 1.5rem);
 				font-family: inherit;
-				/* margin-bottom: 0.75rem; */
+
+				@media (width <= 500px) {
+					margin-left: -1em;
+				}
 
 				&:focus {
 					outline: none;
@@ -134,7 +144,8 @@
 				padding: 0.75rem 1.5rem;
 				border: none;
 				border-radius: 5px;
-				font-size: 1rem;
+				font-size: clamp(0.9rem, 1.75vw, 1.5rem);
+				font-weight: 500;
 				cursor: pointer;
 
 				&[type='button'] {
