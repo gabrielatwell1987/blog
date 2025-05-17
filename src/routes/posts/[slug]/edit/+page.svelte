@@ -85,7 +85,7 @@
 <style>
 	.edit-post {
 		max-width: 800px;
-		margin: 2rem auto;
+		margin: 1rem auto;
 		padding: 0 1rem;
 
 		& h1 {
@@ -94,22 +94,29 @@
 			margin-bottom: 2rem;
 		}
 
-		& .form-group {
-			margin-bottom: 1.5rem;
+		& form {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+		}
 
+		& .form-group {
 			& label {
 				display: block;
 				margin-bottom: 0.5rem;
+				font-size: clamp(1.2rem, 1.2vw, 1.5rem);
 				font-weight: 500;
 			}
 
 			& input,
 			& textarea {
 				width: 100%;
-				padding: 0.75rem;
+				padding: 0.8rem;
 				border: 1px solid #ddd;
 				border-radius: 5px;
-				font-size: 1rem;
+				font-size: clamp(1rem, 1.75vw, 1.5rem);
+				font-family: inherit;
+				/* margin-bottom: 0.75rem; */
 
 				&:focus {
 					outline: none;

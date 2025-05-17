@@ -107,6 +107,9 @@
 		max-width: 800px;
 		margin-inline: auto;
 		padding: 1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
 
 		& h1 {
 			font-family: var(--ancizar-black-font);
@@ -121,8 +124,9 @@
 
 			& label {
 				display: block;
-				margin-bottom: 0.5rem;
+				margin-bottom: 0.25rem;
 				color: #333;
+				font-size: clamp(1.2rem, 1.2vw, 1.5rem);
 				font-weight: 600;
 			}
 
@@ -132,8 +136,9 @@
 				padding: 0.8rem;
 				border: 1px solid #ddd;
 				border-radius: 5px;
-				font-size: 1rem;
+				font-size: clamp(1rem, 1.75vw, 1.5rem);
 				font-family: inherit;
+				/* margin-bottom: 1rem; */
 
 				&:focus {
 					outline: none;
