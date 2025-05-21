@@ -16,32 +16,36 @@
 	}
 </script>
 
-<Github />
-
 <div class="layout">
-	<nav>
-		<div class="nav-header">
-			<a href="/" class="logo">
-				<img src="/logos/main.svg" alt="Think.Flow logo" />
-			</a>
+	<header>
+		<nav>
+			<div class="nav-header">
+				<a href="/" class="logo">
+					<img src="/logos/main.svg" alt="Think.Flow logo" />
+				</a>
 
-			<button class="menu-btn" onclick={toggleMenu} aria-label="Toggle navigation menu">
-				<div class="menu-icon" class:open={isMenuOpen}>
-					<span></span>
-					<span></span>
-					<span></span>
-				</div>
-			</button>
+				<button class="menu-btn" onclick={toggleMenu} aria-label="Toggle navigation menu">
+					<div class="menu-icon" class:open={isMenuOpen}>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</button>
+			</div>
+
+			<ul class:open={isMenuOpen}>
+				{#each navItems as item}
+					<li>
+						<a href={item.href} onclick={() => (isMenuOpen = false)}>{item.text}</a>
+					</li>
+				{/each}
+			</ul>
+		</nav>
+
+		<div class="github-wrapper">
+			<Github />
 		</div>
-
-		<ul class:open={isMenuOpen}>
-			{#each navItems as item}
-				<li>
-					<a href={item.href} onclick={() => (isMenuOpen = false)}>{item.text}</a>
-				</li>
-			{/each}
-		</ul>
-	</nav>
+	</header>
 
 	<LocalStorage />
 
@@ -63,7 +67,44 @@
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
-		margin-top: -5em;
+
+		& header {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			padding: 1rem;
+			background-color: #f4f4f4;
+			width: 100%;
+			position: sticky;
+			top: 0;
+			z-index: 10;
+
+			& nav {
+				flex: 1;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			& .github-wrapper {
+				margin-left: auto;
+				padding-right: 5em;
+			}
+
+			@media (width <= 745px) {
+				& {
+					flex-direction: column;
+					gap: 1rem;
+				}
+
+				& .github-wrapper {
+					margin-left: 0;
+					width: 100%;
+					display: flex;
+					justify-content: center;
+				}
+			}
+		}
 
 		& main {
 			flex: 1;

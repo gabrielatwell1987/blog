@@ -19,5 +19,9 @@
 		fill: var(--accent);
 		width: clamp(2em, 5vw, 4em);
 		padding: 1em;
+
+		@media (width <= 745px) {
+			padding: 0.5em;
+		}
 	}
 </style>

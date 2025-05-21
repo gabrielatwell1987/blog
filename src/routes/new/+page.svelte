@@ -104,7 +104,7 @@
 
 <style>
 	.new-post {
-		max-width: 800px;
+		max-width: 1000px;
 		min-height: 100vh;
 		margin-inline: auto;
 		padding: 2rem 1rem;
@@ -122,6 +122,7 @@
 
 		& .form-group {
 			margin-inline: auto;
+			min-width: clamp(300px, 50vw, 800px);
 			width: 100%;
 
 			& label {
@@ -135,7 +136,7 @@
 			& input,
 			& textarea {
 				width: 100%;
-				padding: 0.8rem;
+				padding: 1rem;
 				border: 1px solid #ddd;
 				border-radius: 5px;
 				font-size: clamp(1rem, 1.75vw, 1.5rem);
@@ -196,12 +197,13 @@
 		}
 	}
 
-	@media (max-width: 500px) {
+	@media (width <= 500px) {
 		.new-post {
 			padding: 1rem;
 
 			& .form-group {
 				padding: 0;
+				width: 100%;
 			}
 		}
 	}

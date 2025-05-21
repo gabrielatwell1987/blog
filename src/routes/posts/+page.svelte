@@ -37,7 +37,11 @@
 				<h3>
 					<a href={`/posts/${post.slug}`}>{post.title}</a>
 				</h3>
+
 				<p class="excerpt">{post.content.slice(0, 150)}...</p>
+
+				<hr />
+
 				<div class="meta">
 					<time>{new Date(post.date).toLocaleDateString()}</time>
 					<div class="tags">
@@ -46,6 +50,7 @@
 						{/each}
 					</div>
 				</div>
+
 				<div class="actions">
 					<a href={`/posts/${post.slug}/edit`} class="edit">Edit</a>
 					<button onclick={() => handleDelete(post.slug)} class="delete" disabled={isDeleting}>
@@ -76,9 +81,21 @@
 
 		& .posts-grid {
 			display: grid;
-			grid-template-columns: repeat(auto-fill, minmax(min(275px, 100%), 1fr));
+			grid-template-columns: repeat(3, 1fr);
 			gap: 2rem;
 			width: 100%;
+
+			@media (width <= 1200px) {
+				grid-template-columns: repeat(3, 1fr);
+			}
+
+			@media (width <= 900px) {
+				grid-template-columns: repeat(2, 1fr);
+			}
+
+			@media (width <= 600px) {
+				grid-template-columns: 1fr;
+			}
 
 			& .post-card {
 				padding: 1.5rem;
@@ -113,11 +130,19 @@
 
 				& .meta {
 					display: flex;
+					flex-direction: column;
 					justify-content: space-between;
 					align-items: center;
+					gap: 0.75rem;
 					font-size: 0.9rem;
 					color: #888;
 					margin-bottom: 1rem;
+
+					& time {
+						font-size: clamp(0.8rem, 1vw, 1rem);
+						font-style: italic;
+						font-weight: 500;
+					}
 
 					& .tags {
 						display: flex;
@@ -129,6 +154,11 @@
 							border-radius: 5px;
 							background: #f0f0f0;
 							font-size: 0.8rem;
+							transition: background 0.2s;
+
+							&:hover {
+								background: #e5e5e5;
+							}
 						}
 					}
 				}
@@ -143,7 +173,8 @@
 						padding: 0.5rem;
 						border-radius: 5px;
 						text-align: center;
-						font-size: 0.9rem;
+						font-size: clamp(0.8rem, 1vw, 1rem);
+						font-weight: 600;
 						cursor: pointer;
 						transition: all 0.2s;
 					}
