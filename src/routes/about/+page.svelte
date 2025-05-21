@@ -31,22 +31,19 @@
 <style>
 	.wrapper {
 		display: flex;
-		justify-content: center;
 		align-items: center;
 		flex-direction: column;
 		gap: 2em;
-		height: 100vh;
+		/* Remove height: 100vh and add proper padding */
+		padding: 2rem 1rem;
 
 		& img {
-			margin-top: 13em;
-			margin-bottom: -3em;
+			object-fit: cover;
 			max-width: 400px;
 			width: 100%;
-			object-fit: cover;
 
 			@media (width <= 500px) {
-				margin-top: 26em;
-				margin-bottom: -1em;
+				margin-top: 1em;
 			}
 		}
 
@@ -58,11 +55,13 @@
 			font-size: clamp(1rem, 2vw, 1.5rem);
 			max-width: 600px;
 			line-height: 1.6;
+			text-align: center;
 		}
 
 		& .features {
 			margin-top: 2em;
 			text-align: center;
+			margin-bottom: 2em; /* Add bottom margin */
 
 			& h2 {
 				font-size: clamp(1.5rem, 1.5vw, 2rem);
