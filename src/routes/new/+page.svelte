@@ -102,7 +102,7 @@
 	</button>
 </form>
 
-<style>
+<!-- <style>
 	.new-post {
 		max-width: 1000px;
 		min-height: 100vh;
@@ -143,7 +143,8 @@
 				font-family: inherit;
 
 				@media (width <= 500px) {
-					margin-left: -1em;
+					margin-left: -3.5em;
+					scale: 0.9;
 				}
 
 				&:focus {
@@ -204,6 +205,112 @@
 			& .form-group {
 				padding: 0;
 				width: 100%;
+			}
+		}
+	}
+</style> -->
+
+<style>
+	.new-post {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		max-width: 1000px;
+		margin: 0 auto;
+		padding: 2rem;
+		box-sizing: border-box;
+		gap: 2rem;
+
+		& h1 {
+			font-family: var(--ancizar-black-font);
+			font-size: clamp(2rem, 4vw, 3rem);
+			text-align: center;
+		}
+
+		& .form-group {
+			width: 100%;
+			max-width: 800px;
+
+			& label {
+				display: block;
+				margin-bottom: 0.5rem;
+				color: #333;
+				font-size: clamp(1.2rem, 1.2vw, 1.5rem);
+				font-weight: 600;
+			}
+
+			& input,
+			& textarea {
+				width: 100%;
+				padding: 1rem;
+				border: 1px solid #ddd;
+				border-radius: 5px;
+				font-size: clamp(1rem, 1.75vw, 1.5rem);
+				font-family: inherit;
+				box-sizing: border-box;
+
+				@media (width <= 500px) {
+					width: 16em;
+					margin-left: -1em;
+				}
+
+				&:focus {
+					outline: none;
+					border-color: #666;
+				}
+			}
+
+			& textarea {
+				resize: vertical;
+				min-height: 200px;
+			}
+		}
+
+		& button {
+			width: 100%;
+			max-width: 200px;
+			padding: 1rem;
+			background: var(--link);
+			color: white;
+			border: none;
+			border-radius: 5px;
+			font-family: var(--ancizar-semibold-font);
+			font-size: clamp(1rem, 2vw, 1.5rem);
+			letter-spacing: 3px;
+			cursor: pointer;
+			transition: background 0.2s;
+
+			&:hover {
+				background: var(--accent);
+			}
+
+			&:disabled {
+				opacity: 0.7;
+				cursor: not-allowed;
+			}
+		}
+
+		& .error {
+			width: 100%;
+			max-width: 800px;
+			color: #cc0000;
+			background: #ffebeb;
+			padding: 0.8rem;
+			border-radius: 5px;
+			font-size: 0.9rem;
+			box-sizing: border-box;
+		}
+
+		@media (width <= 500px) {
+			padding: 1rem;
+
+			& .form-group {
+				width: 100%;
+			}
+
+			& button {
+				max-width: 100%;
 			}
 		}
 	}

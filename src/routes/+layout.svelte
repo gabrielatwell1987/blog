@@ -39,10 +39,14 @@
 						<a href={item.href} onclick={() => (isMenuOpen = false)}>{item.text}</a>
 					</li>
 				{/each}
+
+				<li class="github-mobile">
+					<Github />
+				</li>
 			</ul>
 		</nav>
 
-		<div class="github-wrapper">
+		<div class="github-wrapper desktop-only">
 			<Github />
 		</div>
 	</header>
@@ -88,9 +92,13 @@
 				align-items: center;
 			}
 
-			& .github-wrapper {
+			& .github-wrapper.desktop-only {
 				margin-left: auto;
 				padding-right: 5em;
+
+				@media (width <= 745px) {
+					display: none;
+				}
 			}
 
 			@media (width <= 745px) {
@@ -263,6 +271,16 @@
 
 				&.open {
 					display: flex;
+				}
+
+				& .github-mobile {
+					display: none;
+
+					@media (width <= 745px) {
+						display: flex;
+						justify-content: center;
+						padding: 1rem 0;
+					}
 				}
 			}
 
