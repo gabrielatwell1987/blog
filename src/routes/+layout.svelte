@@ -68,6 +68,7 @@
 		flex-direction: column;
 		min-height: 100vh;
 		overflow-x: hidden;
+		width: 100%;
 
 		& header {
 			display: flex;
@@ -121,11 +122,15 @@
 			width: 100%;
 			display: flex;
 			flex-direction: column;
+			padding: 2rem;
+			max-width: 800px;
+			margin-inline: auto;
 
 			@media (width <= 500px) {
-				padding: 1rem;
-				margin: 0;
+				padding: 4rem;
+				width: calc(100% - 4rem);
 				max-width: 100%;
+				margin-inline: auto;
 			}
 		}
 
