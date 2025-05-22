@@ -67,6 +67,7 @@
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
+		overflow: hidden;
 
 		& header {
 			display: flex;
@@ -145,11 +146,7 @@
 			}
 
 			@media (width <= 500px) {
-				padding: 1.5rem;
-
-				& p {
-					font-size: 0.9rem;
-				}
+				padding: 0;
 			}
 		}
 	}
