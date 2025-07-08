@@ -1,4 +1,6 @@
 <script>
+	import SEO from '$lib/data/SEO.svelte';
+
 	let { params } = $props();
 
 	// This would typically come from a database or API
@@ -10,6 +12,18 @@
 		author: 'John Doe'
 	});
 </script>
+
+<SEO
+	title={post.title}
+	description={post.content.substring(0, 160) + '...'}
+	keywords={post.tags.join(', ')}
+	canonical={`/posts/${params.slug}`}
+	type="article"
+	author={post.author}
+	publishedTime={new Date(post.date).toISOString()}
+	modifiedTime={new Date(post.date).toISOString()}
+	imageAlt={`Article: ${post.title}`}
+/>
 
 <article class="post">
 	<header>

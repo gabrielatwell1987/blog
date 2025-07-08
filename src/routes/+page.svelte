@@ -7,9 +7,12 @@
 </script>
 
 <SEO
-	title="Think.Flow - Your Digital Journal & Blog Platform"
+	title="Think.Flow - Digital Journal & Blog Platform"
 	description="A clean, intuitive blogging platform for capturing and organizing your thoughts. Create, edit, and manage your posts with complete freedom."
-	keywords="blog platform, digital journal, thought capture, personal blog, content management, writing platform, think.flow, think flow, thinkflow, think flow blog, think flow platform, think flow journal"
+	keywords="blog platform, digital journal, thought capture, personal blog, content management, writing platform"
+	canonical="/"
+	type="website"
+	imageAlt="Think.Flow - Digital Journal & Blog Platform"
 />
 
 <header>

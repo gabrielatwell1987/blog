@@ -5,6 +5,24 @@
 	const posts = getPosts();
 	let isDeleting = $state(false);
 
+	// Dynamic SEO content based on posts
+	let seoTitle = $derived(
+		posts.length > 0 ? `Blog Posts (${posts.length}) - Think.Flow` : 'Blog Posts - Think.Flow'
+	);
+
+	let seoDescription = $derived(() => {
+		if (posts.length === 0) {
+			return 'Start your digital journal with Think.Flow. Create your first blog post and begin capturing your thoughts and ideas.';
+		}
+
+		const latestPost = posts[0];
+		const postTitles = posts
+			.slice(0, 3)
+			.map((p) => p.title)
+			.join(', ');
+		return `Explore ${posts.length} blog post${posts.length === 1 ? '' : 's'} including: ${postTitles}${posts.length > 3 ? ' and more' : ''}.`;
+	});
+
 	async function handleDelete(slug) {
 		if (!confirm('Are you sure you want to delete this post?')) {
 			return;
@@ -23,9 +41,12 @@
 </script>
 
 <SEO
-	title="Latest Think.Flow posts"
-	description="Your current posts"
-	keywords="think.flow posts, latest think.flow blog posts"
+	title={seoTitle}
+	description={seoDescription}
+	keywords="blog posts, digital journal entries, personal blog, thought collection"
+	canonical="/posts"
+	type="website"
+	imageAlt="Think.Flow Blog Posts Collection"
 />
 
 <section class="posts">

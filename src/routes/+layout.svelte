@@ -296,7 +296,6 @@
 					margin-top: 1rem;
 					width: 100%;
 					justify-content: space-between;
-					/* margin: 0; */
 					padding: 0;
 
 					& .logo {

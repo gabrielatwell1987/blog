@@ -52,9 +52,12 @@
 </script>
 
 <SEO
-	title="New Think.Flow post"
-	description="Add a new post"
-	keywords="new blog post, new think.flow post"
+	title="Create New Post - Think.Flow"
+	description="Create a new blog post on Think.Flow. Share your thoughts, ideas, and experiences with our intuitive writing interface."
+	keywords="create blog post, new post, write blog, digital journaling, content creation"
+	canonical="/new"
+	type="website"
+	imageAlt="Create New Blog Post - Think.Flow"
 />
 
 <form class="new-post" onsubmit={handleSubmit}>

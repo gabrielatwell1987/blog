@@ -2,7 +2,11 @@
 	import SEO from '$lib/data/SEO.svelte';
 </script>
 
-<SEO title="About Think.Flow" description="All about us" keywords="about think.flow" />
+<SEO
+	title="About Think.Flow"
+	description="Learn about Think.Flow - a modern digital journaling and blogging platform designed for seamless thought capture and content management."
+	canonical="/about"
+/>
 
 <section class="wrapper">
 	<img src="/logos/biglogo.webp" alt="Think.Flow logo" />
