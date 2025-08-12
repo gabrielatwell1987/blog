@@ -1,25 +1,25 @@
 <script>
-	import { page } from '$app/stores';
 	import SEO from '$lib/data/SEO.svelte';
 </script>
 
 <SEO
-	title={`Error ${$page.status} - Think.Flow`}
-	description={`An error occurred: ${$page.error?.message || 'Something went wrong'}. Please try again or return to our homepage.`}
-	canonical="/error"
+	title="Page Not Found (404) - Think.Flow"
+	description="The page you're looking for doesn't exist. Return to our homepage or explore our blog posts."
+	canonical="/404"
 	type="website"
-	imageAlt="Error Page - Think.Flow"
+	noindex={true}
+	imageAlt="404 Page Not Found - Think.Flow"
 />
 
 <div class="error-container">
-	<h1>{$page.status}: {$page.error?.message}</h1>
+	<h1>404 - Page Not Found</h1>
 
-	<p>Sorry, something went wrong. Please try again or return home.</p>
+	<p>Oops! The page you're looking for doesn't exist or has been moved.</p>
 
 	<div class="actions">
-		<button onclick={() => window.location.reload()}> Try Again </button>
-
 		<a href="/">Return Home</a>
+		<a href="/posts">Browse Posts</a>
+		<a href="/about">About Us</a>
 	</div>
 </div>
 
@@ -47,35 +47,32 @@
 			display: flex;
 			gap: 1rem;
 			justify-content: center;
+			flex-wrap: wrap;
 
-			& button,
 			& a {
 				padding: 0.8rem 1.5rem;
 				border-radius: 5px;
 				font-family: var(--ancizar-semibold-font);
 				font-size: 1rem;
-				cursor: pointer;
-				transition: all 0.2s;
 				text-decoration: none;
-			}
-
-			& button {
-				background: #333;
-				color: white;
-				border: none;
-
-				&:hover {
-					background: #444;
-				}
-			}
-
-			& a {
+				transition: all 0.2s;
 				background: #f4f4f4;
 				color: #333;
 				border: 1px solid #ddd;
 
 				&:hover {
 					background: #eee;
+					transform: translateY(-2px);
+				}
+
+				&:first-child {
+					background: #333;
+					color: white;
+					border: none;
+
+					&:hover {
+						background: #444;
+					}
 				}
 			}
 		}

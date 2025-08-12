@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Main pages
+Allow: /about
+Allow: /posts
+Allow: /new
+
+# Disallow any private or admin areas (add if you have any)
+# Disallow: /admin
+# Disallow: /api
+
+# Sitemap location
+Sitemap: https://thinkdotflow.vercel.app/sitemap.xml
+
+# Crawl-delay (optional, helps with server load)
+Crawl-delay: 1
