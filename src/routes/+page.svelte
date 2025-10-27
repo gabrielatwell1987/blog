@@ -37,6 +37,8 @@
 			font-family: var(--ancizar-black-font);
 			font-size: clamp(3rem, 6vw, 10em);
 			letter-spacing: 3px;
+			display: flex;
+			justify-content: center;
 		}
 
 		& p {
@@ -64,10 +66,6 @@
 	}
 
 	@media (max-width: 500px) {
-		/* header {
-            padding: 0.5rem;
-        } */
-
 		header {
 			padding: 0.5rem;
 		}
