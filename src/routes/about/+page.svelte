@@ -38,13 +38,11 @@
 		align-items: center;
 		flex-direction: column;
 		gap: 2em;
-		/* Remove height: 100vh and add proper padding */
 		padding: 2rem 1rem;
 
 		& img {
 			object-fit: cover;
-			max-width: 400px;
-			width: 100%;
+			width: clamp(200px, 50%, 500px);
 
 			@media (width <= 500px) {
 				margin-top: 1em;
