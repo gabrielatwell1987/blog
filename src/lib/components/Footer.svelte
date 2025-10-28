@@ -14,7 +14,8 @@
 		margin-top: auto;
 		padding: 2rem;
 		text-align: center;
-		background-color: #f4f4f4;
+		background-color: #f1efec;
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 		width: 100%;
 
 		& p {

@@ -67,11 +67,12 @@
 		flex-wrap: wrap;
 		align-items: center;
 		padding: 1rem;
-		background-color: #f4f4f4;
+		background-color: #f1efec;
 		width: 100%;
 		position: sticky;
 		top: 0;
 		z-index: 10;
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 
 		& nav {
 			flex: 1;
@@ -115,7 +116,7 @@
 
 	nav {
 		padding: 1rem;
-		background-color: #f4f4f4;
+		background-color: #f1efec;
 		display: flex;
 		justify-content: space-evenly;
 		align-items: center;
