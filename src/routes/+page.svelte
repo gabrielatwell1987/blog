@@ -15,7 +15,7 @@
 	imageAlt="Think.Flow - Digital Journal & Blog Platform"
 />
 
-<header>
+<section>
 	<h1>{title}</h1>
 	<p>{description}</p>
 
@@ -24,15 +24,16 @@
 			<span class="tag">{tag}</span>
 		{/each}
 	</div>
-</header>
+</section>
 
 <style>
-	header {
+	section {
 		padding: 1rem;
 		text-align: center;
+		width: 100%;
 
 		& h1 {
-			color: #333;
+			color: #f1f1f1;
 			margin-bottom: 1rem;
 			font-family: var(--ancizar-black-font);
 			font-size: clamp(3rem, 6vw, 10em);
@@ -66,7 +67,7 @@
 	}
 
 	@media (max-width: 500px) {
-		header {
+		section {
 			padding: 0.5rem;
 		}
 	}

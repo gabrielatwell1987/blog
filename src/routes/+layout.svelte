@@ -1,8 +1,8 @@
 <script>
-	import '../app.css';
-	import LocalStorage from '$lib/data/LocalStorage.svelte';
-	import Navigation from '$lib/components/Navigation.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import Navigation from '$lib/components/Navigation.svelte';
+	import LocalStorage from '$lib/data/LocalStorage.svelte';
+	import '../app.css';
 
 	let { children } = $props();
 </script>
@@ -24,11 +24,12 @@
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
-		width: 100%;
+		width: 100vw;
+		background-color: #242424;
 
 		& main {
 			flex: 1;
-			width: 100%;
+			width: 100vw;
 			display: flex;
 			flex-direction: column;
 			padding: 2rem;

@@ -17,6 +17,7 @@
 		background-color: #f1efec;
 		box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 		width: 100%;
+		max-block-size: 1.5em;
 
 		& p {
 			margin: 0.5rem 0;
