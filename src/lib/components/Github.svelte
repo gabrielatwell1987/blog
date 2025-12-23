@@ -17,7 +17,7 @@
 
 <style>
 	svg {
-		fill: var(--accent);
+		fill: var(--link);
 		width: clamp(2em, 5vw, 4em);
 		padding: 1em;
 

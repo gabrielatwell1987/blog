@@ -98,6 +98,7 @@
 			font-size: clamp(2rem, 4vw, 3rem);
 			margin-bottom: 2rem;
 			text-align: center;
+			color: #f1fefe;
 		}
 
 		& .posts-grid {
@@ -133,7 +134,7 @@
 					margin: 0 0 1rem 0;
 
 					& a {
-						color: #333;
+						color: #242424;
 						text-decoration: none;
 						font-family: var(--ancizar-semibold-font);
 

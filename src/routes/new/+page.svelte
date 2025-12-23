@@ -105,114 +105,6 @@
 	</button>
 </form>
 
-<!-- <style>
-	.new-post {
-		max-width: 1000px;
-		min-height: 100vh;
-		margin-inline: auto;
-		padding: 2rem 1rem;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		gap: 1rem;
-
-		& h1 {
-			font-family: var(--ancizar-black-font);
-			font-size: clamp(2rem, 4vw, 3rem);
-			margin-bottom: 2rem;
-			text-align: center;
-		}
-
-		& .form-group {
-			margin-inline: auto;
-			min-width: clamp(300px, 50vw, 800px);
-			width: 100%;
-
-			& label {
-				display: block;
-				margin-bottom: 0.25rem;
-				color: #333;
-				font-size: clamp(1.2rem, 1.2vw, 1.5rem);
-				font-weight: 600;
-			}
-
-			& input,
-			& textarea {
-				width: 100%;
-				padding: 1rem;
-				border: 1px solid #ddd;
-				border-radius: 5px;
-				font-size: clamp(1rem, 1.75vw, 1.5rem);
-				font-family: inherit;
-
-				@media (width <= 500px) {
-					margin-left: -3.5em;
-					scale: 0.9;
-				}
-
-				&:focus {
-					outline: none;
-					border-color: #666;
-				}
-			}
-
-			& textarea {
-				resize: vertical;
-				min-height: 200px;
-			}
-		}
-
-		& button {
-			max-width: 200px;
-			width: 100%;
-			margin-inline: auto;
-			padding: 1rem;
-			background: var(--link);
-			color: white;
-			border: none;
-			border-radius: 5px;
-			font-family: var(--ancizar-semibold-font);
-			font-size: clamp(1rem, 2vw, 1.5rem);
-			letter-spacing: 3px;
-			cursor: pointer;
-			transition: background 0.2s;
-
-			@media (width <= 500px) {
-				width: 100%;
-			}
-
-			&:hover {
-				background: var(--accent);
-			}
-
-			&:disabled {
-				opacity: 0.7;
-				cursor: not-allowed;
-			}
-		}
-
-		& .error {
-			color: #cc0000;
-			background: #ffebeb;
-			padding: 0.8rem;
-			border-radius: 5px;
-			margin-bottom: 1rem;
-			font-size: 0.9rem;
-		}
-	}
-
-	@media (width <= 500px) {
-		.new-post {
-			padding: 1rem;
-
-			& .form-group {
-				padding: 0;
-				width: 100%;
-			}
-		}
-	}
-</style> -->
-
 <style>
 	.new-post {
 		display: flex;
@@ -229,6 +121,7 @@
 			font-family: var(--ancizar-black-font);
 			font-size: clamp(2rem, 4vw, 3rem);
 			text-align: center;
+			color: #f1fefe;
 		}
 
 		& .form-group {
@@ -238,7 +131,7 @@
 			& label {
 				display: block;
 				margin-bottom: 0.5rem;
-				color: #333;
+				color: #ccc;
 				font-size: clamp(1.2rem, 1.2vw, 1.5rem);
 				font-weight: 600;
 			}
@@ -274,7 +167,7 @@
 			width: 100%;
 			max-width: 200px;
 			padding: 1rem;
-			background: var(--link);
+			background: var(--accent);
 			color: white;
 			border: none;
 			border-radius: 5px;

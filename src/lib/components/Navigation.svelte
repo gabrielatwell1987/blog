@@ -67,14 +67,14 @@
 		flex-wrap: wrap;
 		align-items: center;
 		padding: 1rem;
-		background-color: #f1efec;
+		background-color: #242424;
 		width: 100%;
 		position: sticky;
 		top: 0;
 		z-index: 10;
-		box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 
 		& nav {
+			background-color: #242424;
 			flex: 1;
 			display: flex;
 			justify-content: space-between;
@@ -156,7 +156,7 @@
 					position: absolute;
 					height: 3px;
 					width: 100%;
-					background: #333;
+					background: var(--link);
 					transition: 0.3s ease-in-out;
 
 					&:nth-child(1) {
@@ -198,7 +198,7 @@
 					font-family: var(--sharetech-font);
 					font-size: clamp(1.2rem, 2vw, 1.5rem);
 					font-weight: 900;
-					color: #333;
+					color: #f1fefe;
 
 					&:hover {
 						color: #666;

@@ -51,6 +51,7 @@
 
 		& h1 {
 			font-size: clamp(2rem, 2vw, 3rem);
+			color: #f1fefe;
 		}
 
 		& p {
@@ -58,6 +59,7 @@
 			max-width: 600px;
 			line-height: 1.6;
 			text-align: center;
+			color: #ccc;
 		}
 
 		& .features {
@@ -67,6 +69,7 @@
 
 			& h2 {
 				font-size: clamp(1.5rem, 1.5vw, 2rem);
+				color: #ccc;
 			}
 
 			& ul {
@@ -77,6 +80,7 @@
 
 				& li {
 					font-size: clamp(1rem, 1.75vw, 1.35rem);
+					color: #ccc;
 				}
 			}
 		}

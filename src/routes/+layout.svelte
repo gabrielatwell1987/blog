@@ -26,6 +26,7 @@
 		min-height: 100vh;
 		width: 100vw;
 		background-color: #242424;
+		overflow: hidden;
 
 		& main {
 			flex: 1;

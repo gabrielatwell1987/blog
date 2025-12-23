@@ -12,18 +12,19 @@
 <style>
 	footer {
 		margin-top: auto;
+		margin-inline: auto;
 		padding: 2rem;
 		text-align: center;
-		background-color: #f1efec;
+		background-color: #242424;
 		box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 		width: 100%;
-		max-block-size: 1.5em;
+		block-size: auto;
 
 		& p {
 			margin: 0.5rem 0;
 			font-size: clamp(0.9rem, 1.75vw, 1.3rem);
 			font-weight: 500;
-			color: #333;
+			color: #f1fefe;
 			margin-right: 5em;
 
 			@media (width <= 500px) {
@@ -33,7 +34,7 @@
 			& span {
 				font-size: clamp(1rem, 1.75vw, 1.75rem);
 				font-weight: 700;
-				color: var(--accent);
+				color: var(--link);
 			}
 
 			& a {

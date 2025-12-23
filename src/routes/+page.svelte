@@ -31,6 +31,7 @@
 		padding: 1rem;
 		text-align: center;
 		width: 100%;
+		margin-inline: auto;
 
 		& h1 {
 			color: #f1f1f1;
