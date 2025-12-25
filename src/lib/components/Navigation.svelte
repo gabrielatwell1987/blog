@@ -192,13 +192,21 @@
 			gap: 3em;
 			margin-left: 1em;
 
+			@media (width <= 500px) {
+				border: 2px solid #eee;
+			}
+
 			& li {
 				& a {
 					text-decoration: none;
 					font-family: var(--sharetech-font);
-					font-size: clamp(1.2rem, 2vw, 1.5rem);
+					font-size: clamp(1.5rem, 2vw, 2rem);
 					font-weight: 900;
 					color: #f1fefe;
+
+					@media (width <= 500px) {
+						color: #242424;
+					}
 
 					&:hover {
 						color: #666;

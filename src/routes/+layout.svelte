@@ -24,13 +24,13 @@
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
-		width: 100vw;
+		width: 100%;
 		background-color: #242424;
 		overflow: hidden;
 
 		& main {
 			flex: 1;
-			width: 100vw;
+			width: 100%;
 			display: flex;
 			flex-direction: column;
 			padding: 2rem;

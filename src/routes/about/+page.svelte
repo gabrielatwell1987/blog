@@ -56,7 +56,7 @@
 
 		& p {
 			font-size: clamp(1rem, 2vw, 1.5rem);
-			max-width: 600px;
+			width: 90vw;
 			line-height: 1.6;
 			text-align: center;
 			color: #ccc;
@@ -81,6 +81,10 @@
 				& li {
 					font-size: clamp(1rem, 1.75vw, 1.35rem);
 					color: #ccc;
+
+					@media (width <= 500px) {
+						width: 80vw;
+					}
 				}
 			}
 		}
